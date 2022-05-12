@@ -1,0 +1,31 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+# input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Song @model 
+@auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [create, read, update, delete] } 
+      { allow: private, operations: [create, read, update, delete] } 
+    ]
+  )
+{
+  id: ID!
+  title: String!
+  description: String!
+  filePath: String!
+  like: Int!
+  owner: String!
+}
+
+# {
+#   "id": "100"
+#   "title": "My First Song"
+#   "description": "Test song for amplify app"
+#   "filePath": ""
+#   "like": 4
+#   "owner": "Sam Williams"
+#   "createdAt": "2022-05-12T11:07:25.610Z",
+#   "updatedAt": "2022-05-12T11:07:25.610Z"
+# }

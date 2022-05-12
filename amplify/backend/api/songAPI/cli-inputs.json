@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "songAPI",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\React-Projects\\amplify-react-app\\amplify\\backend\\api\\songAPI\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authamplifyreactapp81c44659"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-05-12T12:15:44.136Z",
+        "keyDescription": "Api for songs"
+      }
+    ]
+  }
+}
